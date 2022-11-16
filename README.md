@@ -1,29 +1,7 @@
-# Boas-vindas ao repositório do Inventory Reports
+# 	:woman_technologist: Project Inventory Reports
 
-Para realizar o projeto, atente-se a cada passo descrito a seguir, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
-# Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta e do Manual da Pessoa Estudante da Trybe.
-
-# Entregáveis
-
-<details>
-  <summary><strong>🤷🏽‍♀️ Como entregar</strong></summary><br />
-
-  Para entregar o seu projeto você deverá criar um *Pull Request* neste repositório.
-
-  Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/4d67f5b4-34a6-489f-a205-b6c7dc50fc16/) e nosso [Blog - Git & GitHub](https://blog.betrybe.com/tecnologia/git-e-github/) sempre que precisar!
-</details>
-
-<details>
-  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
-
-  No projeto passado você implementou algumas funções que faziam leitura e escrita de arquivos `JSON` e `CSV`, correto?
-
-  Neste projeto nós vamos fazer algo parecido, mas utilizando a Programação Orientada a Objetos! Você implementará um **gerador de relatórios** que recebe como entrada arquivos com dados de um estoque e gera, como saída, um relatório acerca destes dados.
+Esse projeto contém uma série de informações sobre o que eu aprendi aqui na Trybe ao longo  do curso de desenvolvimento web da Trybe. <br>
+Neste projeto foi possível utilizar a Programação Orientada a Objetos! Foi implementado um **gerador de relatórios** que recebe como entrada arquivos com dados de um estoque e gera, como saída, um relatório acerca destes dados.
 
   Esses dados de estoque poderão ser obtidos de diversas fontes:
 
@@ -35,101 +13,57 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
   Além disso, o relatório final possuirá duas versões: **simples** e **completa**.
 
-  <strong>🚵 Habilidades a serem trabalhadas:</strong>
- 
+## :rocket:Começando
+Esse projeto foi proposto pelo curso de desenvolvimento web da Trybe.
+### Desenvolvimento
+Esse projeto foi desenvolvido no bloco de ciências da computação e foi possível treinar a linguagem Python, os padrões: Iterator, Adapter, Strategy, Decorator, Observer, Factory.
+### Commits
+Os commits foram feitos de acordo com os requisitos finalizados.
+### Branch
+Todo o projeto foi feita na branch juliana-oliveira-inventory-report.
+### Instalação
+Antes de rodar a aplicação, é preciso criar e instalar o ambiente virtual, através dos comandos:<br>
+- `python3 -m venv .venv && source .venv/bin/activate` <br>
+- `python3 -m pip install -r dev-requirements.txt`
+### Testes
+```bash
+  $ python3 -m pytest
+  ```
 
-  <ul>
-    <li>Aplicar conceitos de Orientação a Objetos em Python;</li>
-    <li>Aplicar padrões de projeto;</li>
-    <li>Leitura e escrita de arquivos (XML, CSV, JSON).</li>
-  </ul>
-</details>
+  O arquivo `pyproject.toml` já configura corretamente o pytest. Entretanto, caso você tenha problemas com isso e queira explicitamente uma saída completa, o comando é:
 
-<details>
-  <summary><strong>🗓 Data de Entrega</strong></summary><br />
-  
-  * Este projeto é individual;
-  * Serão `2` dias de projeto;
-  * Data para entrega final do projeto: `07/11/2022 14:00`.
+  ```bash
+  python3 -m pytest -s -vv
+  ```
 
-</details>
+  Caso precise executar apenas um arquivo de testes basta executar o comando:
 
+  ```bash
+  python3 -m pytest tests/nomedoarquivo.py
+  ```
 
-# Orientações
-<details>
-  <summary><strong>⚠ Antes de começar a desenvolver</strong></summary><br />
+  Caso precise executar apenas uma função de testes basta executar o comando:
 
-  1. Clone o repositório
+  ```bash
+  python3 -m pytest -k nome_da_func_de_tests
+  ```
 
-  - Use o comando: `git clone git@github.com:tryber/sd-019-a-inventory-report.git`
-  - Entre na pasta do repositório que você acabou de clonar:
-    - `cd sd-019-a-inventory-report`
+  Se desejar que os testes parem de ser executados quando acontecer o primeiro erro, use o parâmetro `-x`
 
-  2. Crie o ambiente virtual para o projeto
+  ```bash
+  python3 -m pytest -x tests/test_simple_report.py
+  ```
 
-  - `python3 -m venv .venv && source .venv/bin/activate`
-  
-  3. Instale as dependências
+  Caso queria executar um teste especifico de um arquivo basta executar o comando:
 
-  - `python3 -m pip install -r dev-requirements.txt`
-  
-  4. Crie uma branch a partir da branch `master`
-
-  - Verifique que você está na branch `master`
-    - Exemplo: `git branch`
-  - Se não estiver, mude para a branch `master`
-    - Exemplo: `git checkout master`
-  - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
-    - Você deve criar uma branch no seguinte formato: `nome-github-nome-do-projeto`
-    - Exemplo: `git checkout -b joaozinho-inventory-report`
-
-  5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-
-  - Verifique que as mudanças ainda não estão no _stage_
-    - Exemplo: `git status` (deve aparecer listada a pasta _joaozinho_ em vermelho)
-  - Adicione o novo arquivo ao _stage_ do Git
-    - Exemplo:
-      - `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-      - `git status` (deve aparecer listado o arquivo _joaozinho/README.md_ em verde)
-  - Faça o `commit` inicial
-    - Exemplo:
-      - `git commit -m 'iniciando o projeto inventory-report'` (fazendo o primeiro commit)
-      - `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-  6. Adicione a sua branch com o novo `commit` ao repositório remoto
-
-  - Usando o exemplo anterior: `git push -u origin joaozinho-inventory-report`
-
-  7. Crie um novo `Pull Request` _(PR)_
-
-  - Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-inventory-report/pulls)
-  - Clique no botão verde _"New pull request"_
-  - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  - Coloque um título para a sua _Pull Request_
-    - Exemplo: _"Cria tela de busca"_
-  - Clique no botão verde _"Create pull request"_
-  - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  - **Não se preocupe em preencher mais nada por enquanto!**
-  - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-inventory-report/pulls) e confira que o seu _Pull Request_ está criado
-
-</details>
-
-<details>
-  <summary><strong>⌨️ Durante o desenvolvimento</strong></summary><br />
-
-  - Faça `commits` das alterações que você fizer no código regularmente
-
-  - Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-  - Os comandos que você utilizará com mais frequência são:
-    1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-    2. `git add` _(para adicionar arquivos ao stage do Git)_
-    3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-    4. `git push -u origin nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-    5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
-</details>
-
+  ```bash
+  python3 -m pytest -x tests/nomedoarquivo.py::test_nome_do_teste
+  ```
+### Autores
+Esse foi um projeto individual.
+### Ferramentas usadas
+Foi usado Visual Studio Code, além do Trello que auxiliou na organização das tarefas.
+### Estrutura do projeto
 <details>
   <summary><strong>🧱 Estrutura do Projeto</strong></summary><br />
   Este repositório já contém um template com a estrutura de diretórios e arquivos, tanto de código quanto de teste criados. Veja abaixo:
@@ -201,124 +135,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
 </details>
 
-<details>
-  <summary><strong>🎛 Linter</strong></summary><br />
-
-  Para garantir a qualidade do código, vamos utilizar neste projeto o linter `Flake8`.
-  Assim o código estará alinhado com as boas práticas de desenvolvimento, sendo mais legível
-  e de fácil manutenção! Para rodá-lo localmente no projeto, execute o comandos abaixo:
-
-  ```bash
-  python3 -m flake8
-  ```
-
-  ⚠️ **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.
-  ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠️
-</details>
-
-<details>
-  <summary><strong>🏕️ Ambiente Virtual</strong></summary><br />
-  O Python oferece um recurso chamado de ambiente virtual, onde permite sua máquina rodar sem conflitos, diferentes tipos de projetos com diferentes versões de bibliotecas.
-
-  1. **criar o ambiente virtual**
-
-  ```bash
-  $ python3 -m venv .venv
-  ```
-
-  2. **ativar o ambiente virtual**
-
-  ```bash
-  $ source .venv/bin/activate
-  ```
-
-  3. **instalar as dependências no ambiente virtual**
-
-  ```bash
-  $ python3 -m pip install -r dev-requirements.txt
-  ```
-
-  Com o seu ambiente virtual ativo, as dependências serão instaladas neste ambiente.
-  Quando precisar desativar o ambiente virtual, execute o comando "deactivate". Lembre-se de ativar novamente quando voltar a trabalhar no projeto.
-
-  O arquivo `dev-requirements.txt` contém todas as dependências que serão utilizadas no projeto, ele está agindo como se fosse um `package.json` de um projeto `Node.js`.
-</details>
-
-<details>
-  <summary><strong>🛠 Testes</strong></summary><br />
-
-  Para executar os testes certifique-se de que você está com o ambiente virtual ativado
-
-  <strong>Executar os testes</strong>
-
-  ```bash
-  $ python3 -m pytest
-  ```
-
-  O arquivo `pyproject.toml` já configura corretamente o pytest. Entretanto, caso você tenha problemas com isso e queira explicitamente uma saída completa, o comando é:
-
-  ```bash
-  python3 -m pytest -s -vv
-  ```
-
-  Caso precise executar apenas um arquivo de testes basta executar o comando:
-
-  ```bash
-  python3 -m pytest tests/nomedoarquivo.py
-  ```
-
-  Caso precise executar apenas uma função de testes basta executar o comando:
-
-  ```bash
-  python3 -m pytest -k nome_da_func_de_tests
-  ```
-
-  Se desejar que os testes parem de ser executados quando acontecer o primeiro erro, use o parâmetro `-x`
-
-  ```bash
-  python3 -m pytest -x tests/test_simple_report.py
-  ```
-
-  Caso queria executar um teste especifico de um arquivo basta executar o comando:
-
-  ```bash
-  python3 -m pytest -x tests/nomedoarquivo.py::test_nome_do_teste
-  ```
-
-  Se quiser saber mais sobre a instalação de dependências com `pip`, veja esse [artigo](https://medium.com/python-pandemonium/better-python-dependency-and-package-management-b5d8ea29dff1).
-
-</details>
-
-<details>
-  <summary><strong>🐳Docker</strong></summary>
-  Caso queria executar os seus testes de projeto via `Docker-compose`, substituindo o ambiente virtual, execute o comando:
-
-  ```bash
-  docker-compose run --rm inventory pytest
-  ```
-</details>
-
-<details>
-  <summary><strong>🛼Executando o Projeto</strong></summary>
-  Após implementar o requisito bônus, seu programa deverá ser executável <strong>via linha de comando</strong>.
-  
-  O comando a ser executado será `inventory_report`. Para que ele funcione em seu ambiente é preciso antes instalar o próprio código como um pacote pip:
-  <code>pip install .</code>
-
-  Agora você poderá chamar o comando `inventory_report` passando seus argumentos:
-  
-  <code>inventory_report `argumento1` `argumento2`</code>
-
-  - **argumento1** deve receber o caminho de um arquivo a ser importado. O arquivo pode ser um `csv`, `json` ou `xml`.
-
-  - **argumento2** pode receber duas strings: `simples` ou `completo`, cada uma gerando o respectivo relatório.
-  
-  Outra opção é invocar o comando assim:
-
-  <code>python3 -m inventory_report.main argumento1 argumento2</code>
-
-</details>
-
+### Informações de arquivos
 <details>
   <summary><strong>🗃️ Arquivos com os dados de entrada</strong></summary><br />
   Três formatos de importação estão disponíveis no diretório <code>data</code> dentro do diretório <code>inventory_report</code>. Confira o exemplo de formato eles:
@@ -393,33 +210,14 @@ Os arquivos **XML** seguem o seguinte modelo:
 
 </details>
 
-<details>
-  <summary><strong>🗣 Nos dê feedbacks sobre o projeto!</strong></summary><br />
+## :footprints:Requisitos
+### Metodologia usada
+No trabalho do desenvolvimento de software a gente sempre tem prazos, muitas vezes os prazos são apertados.<br>
+Por outro lado, eu não quero criar algo que não entendo perfeitamente, como também fazer códigos rápidos pode levar a erros que podem demorar muito pra corrigir.<br>
+Por isso, usei e sempre uso o método Baby Steps, que é uma estratégia de abordar o desafio passo à passo, defensivamente.<br>
+Baby steps é um termo em inglês que quer dizer passos de bebê. Refere-se a fazer as coisas, quaisquer que sejam, devagar, com calma, passo a passo.
 
-  Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. 
-  **Leva menos de 3 minutos!**
-
-[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-</details>
-
-<details>
-  <summary><strong>🗂 Compartilhe seu portfólio!</strong></summary><br />
-
-  Agora que você finalizou os requisitos, chegou a hora de mostrar ao mundo que você aprendeu algo novo! 🚀
-
-  Siga esse [**guia que preparamos com carinho**](https://app.betrybe.com/course/career/personal_portfolio/utilizando-projetos-feitos-na-trybe/d7ca7f50-0a8f-4b10-b360-cfcb454d832a) para disponibilizar o projeto finalizado no seu GitHub pessoal.
-
-  Esse passo é super importante para ganhar mais visibilidade no mercado de trabalho, mas também é útil para manter um back-up do seu trabalho.
-
-  E você sabia que o LinkedIn é a principal rede social profissional e compartilhar o seu aprendizado lá é muito importante para quem deseja construir uma carreira de sucesso? Compartilhe esse projeto no seu LinkedIn, marque o perfil da Trybe (@trybe) e mostre para a sua rede toda a sua evolução.
-</details>
-
----
-
-# Requisitos obrigatórios
-
-## 1 - Testar o construtor/inicializador do objeto Produto
+#### :footprints:Requisito 1 - Testar o construtor/inicializador do objeto Produto
 > **Crie o teste em:** tests/product/test_product.py
 
   <p align="center">
@@ -457,7 +255,7 @@ O nome deste teste deve ser `test_cria_produto`, ele deve verificar o correto pr
 </details>
 
 
-## 2 - Testar o relatório individual do produto
+#### :footprints:Requisito 2 - Testar o relatório individual do produto
 > **Crie o teste em:** tests/product_report/test_product_report.py
 
 Boa novidade, o primeiro relatório já implementamos neste arquivo `inventory_report/inventory/product.py`. Formulamos uma frase construída com as informações do produto, que será muito útil para etiquetarmos o estoque.
@@ -491,7 +289,7 @@ O nome deste teste deve ser `test_relatorio_produto`, ele deve instanciar um obj
 </details>
 
 
-## 3 - Gerar a versão simplificada do relatório
+#### :footprints:Requisito 3 - Gerar a versão simplificada do relatório
 
 > **Crie a classe em:** inventory_report/reports/simple_report.py
 
@@ -544,7 +342,7 @@ Exemplo de formato de entrada
 
 </details>
 
-## 4 - Gerar a versão completa do relatório
+#### :footprints:Requisito 4 - Gerar a versão completa do relatório
 
 > **Crie em:** inventory_report/reports/complete_report.py
 
@@ -597,7 +395,7 @@ Produtos estocados por empresa:
 
 </details>
 
-## 5 - Gere os relatórios através de um arquivo CSV
+#### :footprints:Requisito 5 - Gere os relatórios através de um arquivo CSV
 > **Crie em:** inventory_report/inventory/inventory.py
 
 A importação do arquivo CSV deve ser realizada através do método `import_data` que você deve criar em uma classe chamada `Inventory`.
@@ -619,7 +417,7 @@ De acordo com os parâmetros recebidos, deve recuperar os dados do arquivo e cha
 
 </details>
 
-## 6 - Gere os relatórios através de um arquivo JSON
+#### :footprints:Requisito 6 - Gere os relatórios através de um arquivo JSON
 > **Incremente em:** `inventory_report/inventory/inventory.py`. 
 
 > 📌 Utilize o mesmo método do requisito anterior.
@@ -643,7 +441,7 @@ De acordo com os parâmetros recebidos, deve recuperar os dados do arquivo e cha
 
 </details>
 
-## 7 - Gere os relatórios através de um arquivo XML
+#### :footprints:Requisito 7 - Gere os relatórios através de um arquivo XML
 > **Incremente em:** `inventory_report/inventory/inventory.py`. 
 
 > 📌 Utilize o mesmo método do requisito anterior.
@@ -666,7 +464,7 @@ De acordo com os parâmetros recebidos, deve recuperar os dados do arquivo e cha
 
 </details>
 
-## 8 - Organizar o código de importação com o padrão Strategy
+#### :footprints:Requisito 8 - Organizar o código de importação com o padrão Strategy
 > **Crie em:** inventory_report/importer/importer.py
 
 Como pôde observar até aqui, o método `import_data` está com muitas responsabilidades, e, com o intuito de resolver isso, podemos dividir a sua complexidade para cada formato de arquivo.
@@ -713,7 +511,7 @@ O padrão de projeto `Strategy` nos ajuda a isolar cada estratégia em um objeto
 
 </details>
 
-## 9 - Testar a geração de uma versão do relatório em cores
+#### :footprints:Requisito 9 - Testar a geração de uma versão do relatório em cores
 > **Crie o teste em:** tests/report_decorator/test_report_decorator.py
 
 Uma versão deste relatório será exibida em letreiros em Led, estes letreiros são coloridos, para isso, já implementamos o método responsável por retornar este relatório em cores.
@@ -766,113 +564,3 @@ O nome deste teste deve ser `test_decorar_relatorio`, ele deve verificar se o re
   O <strong>teste da Trybe</strong> irá avaliar se o <strong>seu teste</strong> está passando conforme seu objetivo, e confirmará se ele está falhando em alguns casos que deve falhar.
   Para estes testes que esperemos que falhe, o requisito será considerado atendindo quando a resposta do Pytest for <code>XFAIL(Expected Fail)</code>, ao invés de <code>PASS</code> ou <code>FAIL</code>.
 </details>
-
-# Requisitos bônus
-
-## 10 - Criar uma classe `InventoryIterator`
-
-> **Crie em:** inventory_report/inventory/inventory_iterator.py
-    
-O estoque será mostrado por painéis de led. Para não sobrecarregarmos a memória destes painéis, queremos poder iterar pelos itens do estoque, um item por vez. Para isso, precisamos primeiro refatorar a forma com que importamos os dados, e então aplicar o Padrão Iterator.
- 
-- A classe `Inventory` deverá ser refatorada (copiada) em outro arquivo chamado `inventory_report/inventory/inventory_refactor.py`. Nesse arquivo você irá refatorar a classe `Inventory` chamando-a de `InventoryRefactor`.
-
-- A classe `InventoryRefactor` deve utilizar as classes definidas no requisito 8 para lidar com a lógica de importação, via **composição** no método `import_data`.
-
-- A classe `InventoryRefactor` deve receber por seu construtor a classe que será utilizada para lidar com a lógica de importação e armazenar em um atributo chamado `importer`.
-  
-- A classe `InventoryRefactor` deve ter um método *de instância* que recebe um caminho para o arquivo a ser importado, e carrega seus dados.
-
-- Ao importar os dados, os mesmos devem ser armazenados na instância, em adição aos itens já presentes naquela instância. O atributo de `InventoryRefactor` que armazena esses dados deve se chamar `data`.
-
-- Os atributos e os métodos devem ser públicos.
-
-- A classe `InventoryIterator` deverá implementar a interface de um iterator (`Iterator`) com o método `__next__`. Além disso, a classe `InventoryRefactor` deve implementar o método `__iter__`, que retornará este iterador.
-    
-- As classes `InventoryIterator` e `InventoryRefactor` devem implementar corretamente a interface do padrão de projeto **Iterator**, de modo que seja possível iterar sobre os itens em estoque.
-    
-
-<details>
-  <summary>
-    <b>✍️ Teste manual</b>
-  </summary>
-
-```python
-iterator = iter(inventory)
-first_item = next(iterator)
-```
-</details>
-
-<details>
-  <summary>
-    <b>🤖 O que será verificado pelo avaliador</b>
-  </summary>
-
-  - 10.1 - Será validado que a instancia de InventoryRefactor é iterável (Iterable)
-
-  - 10.2 - Será validado que é possível iterar o primeiro item da lista usando csv
-
-  - 10.3 - Será validado que é possível iterar o primeiro item da lista usando json
-
-  - 10.4 - Será validado que é possível iterar o primeiro item da lista usando xml
-
-  - 10.5 - Será validado que é possível receber duas fontes de dados sem sobrescrita
-
-  - 10.6 - Será validado que não é possível enviar arquivo inválido
-
-</details>
-
-## 11 - Preencha a função `main` no módulo `inventory_report/main.py`
-
-Essa função deve, ao receber pela linha de comando o caminho de um arquivo e o tipo de relatório, devolver o relatório correto.
-
-- Deverá ser usado a classe `InventoryRefactor` para recuperar os dados e gerar o relatório.
-
-- Ao chamar o comando no formato abaixo pelo terminal, deve ser impresso na tela o devido relatório no formato da saída dos requisitos `3` e `4`: 
-
-```bash
-inventory_report <caminho_do_arquivo_input> <tipo_de_relatório>
-```
-
-- Caso a chamada tenha menos de três argumentos (o nome `inventory_report` é considerado o primeiro argumento), exiba a mensagem de erro "Verifique os argumentos" na `stderr`.
-    
-**Dicas:**
-  - Se o comando não encontrar o pacote `inventory_report`, basta executar `pip install .` na raiz do projeto.
-
-  - Você pode utilizar o `sys.argv` para receber a entrada de dados da pessoa usuária.
-    
-  - Ao utilizar algo do módulo `sys`, faça a importação com `import sys` e utilize `sys.xxxx` (onde xxxx é o que você quer utilizar). Não faça `from sys import xxxx`, pois isso pode fazer com que os testes não passem.
-    
-  - Tome a precaução de não deixar um `print()` em seu código, pois ele irá conflitar com os testes.
-
-<details>
-  <summary>
-    <b>✍️ Teste manual</b>
-  </summary> No ambiente virtual onde seu projeto foi configurado, instale o próprio projeto com o comando
-  <code>pip install .</code>
-  Agora execute o projeto com:
-  <code>inventory_report parametro_1 parametro_2</code>
-  exemplo:
-  <code>inventory_report inventory_report/data/inventory.csv simples</code>
-  Desta forma você conseguirá interagir gerar o relatório com o comando.
-</details>
-
-<details>
-  <summary>
-    <b>🤖 O que será verificado pelo avaliador</b>
-  </summary>
-
-  - 11.1 - Será validado se pelo comando é possível importar um arquivo csv simples
-
-  - 11.2 - Será validado se pelo comando é possível importar um arquivo csv completo
-
-  - 11.3 - Será validado se pelo comando é possível importar um arquivo json simples
-
-  - 11.4 - Será validado se pelo comando é possível importar um arquivo json completo
-
-  - 11.5 - Será validado se pelo comando é possível importar um arquivo xml simples
-
-  - 11.6 - Será validado se pelo comando é possível importar um arquivo xml completo
-
-  - 11.7 - Será validado se houverem argumentos faltantes será retornando um erro
-
